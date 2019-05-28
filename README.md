@@ -28,4 +28,12 @@ services.AddOcelot(Configuration)
             .AddConsul()
             .AddConfigStoredInConsul();
 
+
+## 支持ocelot权限
+[HttpGet]
+[PermissionFilter(Permission = "ewip.salary.CalculateSalary")]
+public async Task<string> Get()
+{
+    return $"API001:{DateTime.Now.ToString()}";
+}
 ```
