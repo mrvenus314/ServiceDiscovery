@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ServiceRegister</name>
+    </assembly>
+    <members>
+        <member name="T:ServiceRegister.Consts.ActionFilterConst">
+            <summary>
+            Action 过滤器常量
+            </summary>
+        </member>
+        <member name="F:ServiceRegister.Consts.ActionFilterConst.PERMISSIONFILTER">
+            <summary>
+            api接口权限过滤器
+            </summary>
+        </member>
+        <member name="T:ServiceRegister.Filters.PermissionFilter">
+            <summary>
+            接口权限过滤器
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Filters.PermissionFilter.Permission">
+            <summary>
+            权限
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.ActionDescriptor">
+            <summary>
+            Gets or sets Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription.ActionDescriptor
+                for this api.
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.GroupName">
+            <summary>
+            Gets or sets group name for this api.
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.HttpMethod">
+            <summary>
+            Gets or sets the supported HTTP method for this api, or null if all HTTP methods
+                are supported.
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.ParameterDescriptions">
+            <summary>
+            Gets a list of Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription for
+                this api.
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.Properties">
+            <summary>
+            Gets arbitrary metadata properties associated with the Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription.
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.RelativePath">
+            <summary>
+            Gets or sets relative url path template (relative to application root) for this  api.
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.SupportedRequestFormats">
+            <summary>
+            Gets the list of possible formats for a request.
+            Will be empty if the action does not accept a parameter decorated with the [FromBody] attribute.
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.SupportedResponseTypes">
+            <summary>
+            Gets the list of possible formats for a response.        
+            Will be empty if the action returns no response, or if the response type is unclear.
+            Use ProducesAttribute on an action method to specify a response type.
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ApiDescriptionOptions.Permission">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ServiceRegister.Provider.IRouteProvider`1.GenerateRoutes(System.Collections.Generic.List{ServiceRegister.Options.ApiDescriptionOptions})">
+            <summary>
+            生成路由
+            </summary>
+            <param name="apis"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ServiceRegister.Redis.RedisConnector">
+            <summary>
+            Redis连接器
+            </summary>
+        </member>
+        <member name="M:ServiceRegister.Redis.RedisConnector.GetDatabase(System.String,System.String)">
+            <summary>
+            获取Redis数据库
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ServiceRegister.ServiceRegisterExtension">
+            <summary>
+            注册服务
+            </summary>
+        </member>
+        <member name="F:ServiceRegister.ServiceRegisterExtension.ApiList">
+            <summary>
+            api列表
+            </summary>
+        </member>
+        <member name="M:ServiceRegister.ServiceRegisterExtension.UseApiRegister(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiDescriptionGroupCollectionProvider)">
+            <summary>
+            注册api
+            </summary>
+            <param name="app"></param>
+            <param name="apiDescriptionGroupCollectionProvider"></param>
+        </member>
+    </members>
+</doc>

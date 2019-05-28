@@ -3,3 +3,10 @@
 ################################################################################
 
 /.vs
+/ServiceDiscovery/.vs/ServiceDiscovery
+/ServiceDiscovery/ServiceDiscovery.Consul/obj
+/ServiceDiscovery/ServiceDiscovery.Consul/NugetPush.bat
+/ServiceDiscovery/ServiceDiscovery.Ocelot/obj
+/ServiceDiscovery/ServiceDiscovery.Ocelot/NugetPush.bat
+/ServiceDiscovery/ServiceRegister/bin
+/ServiceDiscovery/ServiceRegister/obj
