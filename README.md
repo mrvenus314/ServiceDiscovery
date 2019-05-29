@@ -3,9 +3,9 @@
 基于consul，ocelot的服务注册，服务发现
 目前仅实现了利用consulkv来做api的存储
 
-```csharp
 ## api配置
 
+```csharp
 services.AddOcelot(
                 config => { config.Key = "Oceolot_Api"; })
                 .AddConsul(
@@ -21,15 +21,18 @@ services.AddOcelot(
 
 
 app.UseConsul().UseApiRegister(apiDescriptionGroupCollectionProvider).WithConsulKV();
-
-
+```
 ## ocelot网关配置
+
+```csharp
 services.AddOcelot(Configuration)
             .AddConsul()
             .AddConfigStoredInConsul();
-
+```
 
 ## 支持ocelot权限
+
+```csharp
 [HttpGet]
 [PermissionFilter(Permission = "ewip.salary.CalculateSalary")]
 public async Task<string> Get()
