@@ -39,6 +39,11 @@ namespace ServiceRegister.Options
         public HttpMethod HttpMethod { get; set; }
 
         /// <summary>
+        /// claim类型
+        /// </summary>
+        public string ClaimType { get; set; } = "role";
+
+        /// <summary>
         /// 权限
         /// </summary>
         public string Permission { get; set; }

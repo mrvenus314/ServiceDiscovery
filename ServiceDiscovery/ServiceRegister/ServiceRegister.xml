@@ -80,15 +80,16 @@
             OData
             </summary>
         </member>
-        <member name="M:ServiceRegister.Options.ODataConvention.EntitySet``1(System.String,ServiceRegister.Enums.HttpMethod,System.String)">
+        <member name="M:ServiceRegister.Options.ODataConvention.EntitySet``1(System.String,ServiceRegister.Enums.HttpMethod,System.String,System.String)">
             <summary>
             实体
             ex: /odata/Payroll
             </summary>
             <typeparam name="TEntityType"></typeparam>
-            <param name="name">名称</param>
-            <param name="httpMethod">请求方式</param>
-            <param name="permission">权限</param>
+            <param name="name"></param>
+            <param name="httpMethod"></param>
+            <param name="claimType"></param>
+            <param name="permission"></param>
             <returns></returns>
         </member>
         <member name="M:ServiceRegister.Options.ODataConvention.Count">
@@ -124,6 +125,11 @@
         <member name="P:ServiceRegister.Options.ODataRoute.HttpMethod">
             <summary>
             请求方式
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ODataRoute.ClaimType">
+            <summary>
+            claim类型
             </summary>
         </member>
         <member name="P:ServiceRegister.Options.ODataRoute.Permission">

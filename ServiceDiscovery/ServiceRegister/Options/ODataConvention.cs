@@ -17,13 +17,14 @@ namespace ServiceRegister.Options
         /// ex: /odata/Payroll
         /// </summary>
         /// <typeparam name="TEntityType"></typeparam>
-        /// <param name="name">名称</param>
-        /// <param name="httpMethod">请求方式</param>
-        /// <param name="permission">权限</param>
+        /// <param name="name"></param>
+        /// <param name="httpMethod"></param>
+        /// <param name="claimType"></param>
+        /// <param name="permission"></param>
         /// <returns></returns>
-        public ODataConvention EntitySet<TEntityType>(string name, HttpMethod httpMethod, string permission = null) where TEntityType : class
+        public ODataConvention EntitySet<TEntityType>(string name, HttpMethod httpMethod, string claimType, string permission = null) where TEntityType : class
         {
-            _oDataRoute = new ODataRoute() { Route = name, HttpMethod = httpMethod, Permission = permission };
+            _oDataRoute = new ODataRoute() { Route = name, HttpMethod = httpMethod, ClaimType = claimType, Permission = permission };
             ODataRoutes.Add(_oDataRoute);
 
             return this;

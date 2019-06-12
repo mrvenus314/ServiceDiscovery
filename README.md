@@ -12,15 +12,20 @@ services.AddOcelot(
                 config =>
                 {
                     config.Address = "127.0.0.1";
-                    config.ServiceId = "serivice";
-                    config.ServiceName = "serivice";
+                    config.ServiceId = "service";
+                    config.ServiceName = "service";
                     config.Port = 5001;
                     config.ConsulKVKey = "Oceolot_Api";
                     config.Consul = new ConsulOptions() { HttpEndPoint = "http://127.0.0.1:8500" };
                 }).AddConsulKVRepository();
 
-
-app.UseConsul().UseApiRegister(apiDescriptionGroupCollectionProvider).WithConsulKV();
+支持了odata接口注册
+app.UseConsul().UseApiRegister(apiDescriptionGroupCollectionProvider, AutoMapper.Mapper.Instance)
+                .BuildODataApi(bulider =>
+                {
+                    bulider.EntitySet<Payroll>("Payroll", HttpMethod.GET, "permission", "payroll_view").Count().Filter();
+                })
+                .WithConsulKV();
 ```
 ## ocelot网关配置
 
