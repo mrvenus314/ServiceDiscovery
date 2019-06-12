@@ -10,3 +10,5 @@
 /ServiceDiscovery/ServiceDiscovery.Ocelot/NugetPush.bat
 /ServiceDiscovery/ServiceRegister/bin
 /ServiceDiscovery/ServiceRegister/obj
+/ServiceDiscovery/ServiceDiscovery.Ocelot/bin/Release/netstandard2.0
+/ServiceDiscovery/ServiceDiscovery.Consul/bin/Release/netstandard2.0

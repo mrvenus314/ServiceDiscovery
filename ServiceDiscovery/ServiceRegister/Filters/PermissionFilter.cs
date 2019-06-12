@@ -10,6 +10,8 @@ namespace ServiceRegister.Filters
     /// </summary>
     public class PermissionFilter : ActionFilterAttribute
     {
+        public string ClaimType { get; set; }
+
         /// <summary>
         /// 权限
         /// </summary>

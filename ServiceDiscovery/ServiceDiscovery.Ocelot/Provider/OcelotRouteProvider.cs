@@ -23,6 +23,8 @@ namespace ServiceDiscovery.Ocelot.Provider
         {
             this._repository = repository;
             this._serviceDiscoveryOptions = serviceDiscoveryOptions;
+
+            ServiceName = serviceDiscoveryOptions.ServiceName;
         }
 
         public virtual string GenerateRoutes(List<ApiDescriptionOptions> apis)
@@ -39,8 +41,8 @@ namespace ServiceDiscovery.Ocelot.Provider
                     // 删除重复接口
                     fileConfig.ReRoutes.RemoveAll(l => l.UpstreamPathTemplate == $"/{ServiceName}/{api.RelativePath}");
 
-                    Dictionary<string, string> permissionDic = new Dictionary<string, string>();
-                    permissionDic.Add("permission", api.Permission);
+                    Dictionary<string, string> claims = new Dictionary<string, string>();
+                    claims.Add(api.ClaimType, api.Permission);
 
                     ocelotReRoutes.Add(new FileReRoute()
                     {
@@ -49,8 +51,9 @@ namespace ServiceDiscovery.Ocelot.Provider
                         UpstreamPathTemplate = $"/{ServiceName}/{api.RelativePath}",
                         UpstreamHttpMethod = new List<string>() { api.HttpMethod },
                         ServiceName = ServiceName,
+                        DownstreamHostAndPorts = new List<FileHostAndPort>() { new FileHostAndPort() { Host = _serviceDiscoveryOptions.DownstreamHost, Port = _serviceDiscoveryOptions.DownstreamPort } },
                         AuthenticationOptions = new FileAuthenticationOptions() { AuthenticationProviderKey = "IdentityBearer" },
-                        RouteClaimsRequirement = permissionDic
+                        RouteClaimsRequirement = claims
                     });
                 }
             }

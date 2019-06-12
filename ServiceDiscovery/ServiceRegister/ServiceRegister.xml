@@ -75,6 +75,62 @@
             
             </summary>
         </member>
+        <member name="T:ServiceRegister.Options.ODataConvention">
+            <summary>
+            OData
+            </summary>
+        </member>
+        <member name="M:ServiceRegister.Options.ODataConvention.EntitySet``1(System.String,ServiceRegister.Enums.HttpMethod,System.String)">
+            <summary>
+            实体
+            ex: /odata/Payroll
+            </summary>
+            <typeparam name="TEntityType"></typeparam>
+            <param name="name">名称</param>
+            <param name="httpMethod">请求方式</param>
+            <param name="permission">权限</param>
+            <returns></returns>
+        </member>
+        <member name="M:ServiceRegister.Options.ODataConvention.Count">
+            <summary>
+            计数规则
+            ex: /odata/Payroll/$Count
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ServiceRegister.Options.ODataConvention.Filter">
+            <summary>
+            过滤规则
+            ex: /odata/Payroll{everything}
+                /odata/Payroll/$Count{everything}
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ServiceRegister.Options.ODataOptions">
+            <summary>
+            OData选项
+            </summary>
+        </member>
+        <member name="T:ServiceRegister.Options.ODataRoute">
+            <summary>
+            OData接口路由规则
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ODataRoute.Route">
+            <summary>
+            路由
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ODataRoute.HttpMethod">
+            <summary>
+            请求方式
+            </summary>
+        </member>
+        <member name="P:ServiceRegister.Options.ODataRoute.Permission">
+            <summary>
+            权限
+            </summary>
+        </member>
         <member name="M:ServiceRegister.Provider.IRouteProvider`1.GenerateRoutes(System.Collections.Generic.List{ServiceRegister.Options.ApiDescriptionOptions})">
             <summary>
             生成路由
@@ -105,12 +161,21 @@
             api列表
             </summary>
         </member>
-        <member name="M:ServiceRegister.ServiceRegisterExtension.UseApiRegister(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiDescriptionGroupCollectionProvider)">
+        <member name="M:ServiceRegister.ServiceRegisterExtension.UseApiRegister(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiDescriptionGroupCollectionProvider,AutoMapper.IMapper)">
             <summary>
             注册api
             </summary>
             <param name="app"></param>
             <param name="apiDescriptionGroupCollectionProvider"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:ServiceRegister.ServiceRegisterExtension.BuildODataApi(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Action{ServiceRegister.Options.ODataConvention})">
+            <summary>
+            生成odata接口
+            </summary>
+            <param name="app"></param>
+            <param name="options"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

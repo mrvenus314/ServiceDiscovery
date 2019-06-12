@@ -54,6 +54,8 @@ namespace ServiceRegister.Options
         /// </summary>
         public IList<ApiResponseType> SupportedResponseTypes { get; }
 
+        public string ClaimType { get; set; } = "role";
+
         /// <summary>
         /// 
         /// </summary>
